@@ -117,3 +117,24 @@ function Acomodo(Resultados)
         }
     }
 }
+
+function reiniciar()
+{
+    //Limpiar constantes de ecuación objetivo
+    document.getElementById('x1_eo').value = "";
+    document.getElementById('x2_eo').value = "";
+
+    //Limpiar constantes de restricciones 
+    //Restricción 1
+    document.getElementById('x1_r1').value = "";
+    document.getElementById('x2_r1').value = "";
+    document.getElementById('v1').value = "";
+    //Restricción 2
+    document.getElementById('x1_r2').value = "";
+    document.getElementById('x2_r2').value = "";
+    document.getElementById('v2').value = "";
+    //Restricción 3
+    document.getElementById('x1_r3').value = "";
+    document.getElementById('x2_r3').value = "";
+    document.getElementById('v3').value = "";
+}
