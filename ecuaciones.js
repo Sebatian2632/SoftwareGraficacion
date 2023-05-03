@@ -71,8 +71,7 @@ function grafica_max(){
     
     //Imprime en pantalla el valor correcto, en teoria
     let Conclusion = 'El mayor resultado que podemos obtener es '+ Resultados[1][1] + ' y sus coordenadas son: '+ Resultados[1][2] + ',' + Resultados[1][3];
-    document.getElementById('Conclusion').innerHTML = Conclusion;
-    console.log('El mayor resultado que podemos obtener es '+ Resultados[1][1] + ' y sus coordenadas son: '+ Resultados[1][2] + ',' + Resultados[1][3]);
+    document.getElementById("mensaje").innerHTML = Conclusion;
 }
 
 async function grafica_min()
@@ -154,7 +153,8 @@ async function grafica_min()
     }
     
     //Imprime en pantalla el valor correcto, en teoria
-    console.log('El menor resultado que podemos obtener es '+ Resultados[1][1] + ' y sus coordenadas son: '+ Resultados[1][2] + ',' + Resultados[1][3]);
+    let Conclusion = 'El menor resultado que podemos obtener es '+ Resultados[1][1] + ' y sus coordenadas son: '+ Resultados[1][2] + ',' + Resultados[1][3];
+    document.getElementById("mensaje").innerHTML = Conclusion;
 }
 //Función para el acomodo del arreglo
 function Acomodo(Resultados)
