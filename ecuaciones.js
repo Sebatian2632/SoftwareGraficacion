@@ -44,9 +44,9 @@ function grafica_max(){
 
     //Agrelo para guardar los resultados:
     let Resultados = [
-        ["R1", R1],
-        ["R2", R2],
-        ["R3", R3]];
+        ["R1", R1, X_1I, Y_1I],
+        ["R2", R2, X_2I, Y_2I],
+        ["R3", R3, X_3I, Y_3I]];
     
     //For para imprimir los resultados en la consola
         for(let i=0; i<Resultados.length;i++)
@@ -70,7 +70,9 @@ function grafica_max(){
     }
     
     //Imprime en pantalla el valor correcto, en teoria
-    console.log('El mayor resultado que podemos obtener es '+ Resultados[1][1]);
+    let Conclusion = 'El mayor resultado que podemos obtener es '+ Resultados[1][1] + ' y sus coordenadas son: '+ Resultados[1][2] + ',' + Resultados[1][3];
+    document.getElementById('Conclusion').innerHTML = Conclusion;
+    console.log('El mayor resultado que podemos obtener es '+ Resultados[1][1] + ' y sus coordenadas son: '+ Resultados[1][2] + ',' + Resultados[1][3]);
 }
 
 async function grafica_min()
@@ -125,9 +127,9 @@ async function grafica_min()
 
     //Agrelo para guardar los resultados:
     let Resultados = [
-        ["R1", R1],
-        ["R2", R2],
-        ["R3", R3]];
+        ["R1", R1, X_1I, Y_1I],
+        ["R2", R2, X_2I, Y_2I],
+        ["R3", R3, X_3I, Y_3I]];
     
     //For para imprimir los resultados en la consola
         for(let i=0; i<Resultados.length;i++)
@@ -152,12 +154,12 @@ async function grafica_min()
     }
     
     //Imprime en pantalla el valor correcto, en teoria
-    console.log('El menor resultado que podemos obtener es '+ Resultados[1][1]);
+    console.log('El menor resultado que podemos obtener es '+ Resultados[1][1] + ' y sus coordenadas son: '+ Resultados[1][2] + ',' + Resultados[1][3]);
 }
 //Función para el acomodo del arreglo
 function Acomodo(Resultados)
 {
-    let n = Resultados.length;
+    /*let n = Resultados.length;
     for(let i =0; i<n-1; i++)
     {
         for(let j=0; j<n-1;j++)
@@ -170,7 +172,19 @@ function Acomodo(Resultados)
                 Resultados[j+1] = temp;
             }
         }
+    }*/
+    let n = Resultados.length;
+    for(let i = 0; i < n-1; i++) {
+        for(let j = 0; j < n-i-1; j++) {
+            if(Resultados[j][1] > Resultados[j+1][1]) {
+                // Intercambio de valores
+                let temp = Resultados[j];
+                Resultados[j] = Resultados[j+1];
+                Resultados[j+1] = temp;
+            }
+        }
     }
+
 }
 
 function reiniciar()
