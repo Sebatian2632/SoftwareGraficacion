@@ -17,6 +17,24 @@ function grafica_max(){
     const x2_r3=document.getElementById('x2_r3').value;
     const v3=document.getElementById('v3').value;
 
+    if((x1_eo <='0') || (x2_eo <= 0))
+    {
+        alert("Alguno de los valores de la función objetivo es menor o igual a 0. Favor de cambiarlo");
+    }
+    else if((x1_r1 <= '0') || (x2_r1 <= '0') || (v1 <= '0'))
+    {
+        alert("Alguno de los valores de la restricción 1 es menor o igual a 0. Favor de cambiarlo");
+    }
+    else if((x1_r2 <= '0') || (x2_r2 <= '0') || (v2 <= '0'))
+    {
+        alert("Alguno de los valores de la restricción 2 es menor o igual a 0. Favor de cambiarlo");
+    }
+    else if((x1_r3 <= '0') || (x2_r3 <= '0') || (v3 <= '0'))
+    {
+        alert("Alguno de los valores de la restricción 3 es menor o igual a 0. Favor de cambiarlo");
+    }
+    else
+    {
     //Puntos de intersección:
     //Primer punto:
     X_1I = ((v1 * x2_r2) - (x2_r1 * v2)) / ((x1_r1 * x2_r2) - (x2_r1 * x1_r2));
@@ -72,6 +90,7 @@ function grafica_max(){
     //Imprime en pantalla el valor correcto, en teoria
     let Conclusion = 'El mayor resultado que podemos obtener es '+ Resultados[1][1] + ' y sus coordenadas son: '+ Resultados[1][2] + ',' + Resultados[1][3];
     document.getElementById("mensaje").innerHTML = Conclusion;
+    }
 }
 
 async function grafica_min()
@@ -95,6 +114,24 @@ async function grafica_min()
     const x2_r3=document.getElementById('x2_r3').value;
     const v3=document.getElementById('v3').value;
 
+    if((x1_eo <='0') || (x2_eo <= 0))
+    {
+        alert("Alguno de los valores de la función objetivo es menor o igual a 0. Favor de cambiarlo");
+    }
+    else if((x1_r1 <= '0') || (x2_r1 <= '0') || (v1 <= '0'))
+    {
+        alert("Alguno de los valores de la restricción 1 es menor o igual a 0. Favor de cambiarlo");
+    }
+    else if((x1_r2 <= '0') || (x2_r2 <= '0') || (v2 <= '0'))
+    {
+        alert("Alguno de los valores de la restricción 2 es menor o igual a 0. Favor de cambiarlo");
+    }
+    else if((x1_r3 <= '0') || (x2_r3 <= '0') || (v3 <= '0'))
+    {
+        alert("Alguno de los valores de la restricción 3 es menor o igual a 0. Favor de cambiarlo");
+    }
+    else
+    {
     //Resolver las ecuaciones
     //Primera ecuación:
     X1_1P = v1 / x1_r1;
@@ -155,6 +192,7 @@ async function grafica_min()
     //Imprime en pantalla el valor correcto, en teoria
     let Conclusion = 'El menor resultado que podemos obtener es '+ Resultados[1][1] + ' y sus coordenadas son: '+ Resultados[1][2] + ',' + Resultados[1][3];
     document.getElementById("mensaje").innerHTML = Conclusion;
+    }
 }
 //Función para el acomodo del arreglo
 function Acomodo(Resultados)
@@ -206,4 +244,8 @@ function reiniciar()
     document.getElementById('x1_r3').value = "";
     document.getElementById('x2_r3').value = "";
     document.getElementById('v3').value = "";
+
+    let Conclusion = 'Aqui va la interpretación de la grafica';
+    document.getElementById("mensaje").innerHTML = Conclusion;
+
 }
