@@ -298,6 +298,15 @@ function reiniciar()
 
 function graficar(maximox,maximoy,Resultados)
 {
+    //Constante para los puntos:
+    const genericOptions = {
+        fill: false,
+        interaction: {
+          intersect: false
+        },
+        radius: 0,
+      };
+    
     var MAXIMOX = [];
     var MAXIMOY = [];
 
@@ -354,32 +363,58 @@ function graficar(maximox,maximoy,Resultados)
     var xLabels = MAXIMOX; // Valores del eje X
 		var yData = MAXIMOY; // Valores del eje Y (inicialmente vacío)
 		var ctx = document.getElementById('miGrafico').getContext('2d');
-var miGrafico = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: xLabels,
-        datasets: [
-            {
-                label: 'Línea ',
-                data: Linea1,
-                borderColor: 'red',
-                fill: false
+        var miGrafico = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: xLabels,
+                datasets: [
+                    {
+                        label: 'Línea 1',
+                        data: Linea1,
+                        borderColor: 'red',
+                        fill: false,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'Línea 2',
+                        data: Linea2,
+                        borderColor: 'blue',
+                        fill: false,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'Línea 3',
+                        data: Linea3,
+                        borderColor: 'green',
+                        fill: false,
+                        pointRadius: 0
+                    }
+                ]
             },
-            {
-                label: 'Línea 2',
-                data: Linea2,
-                borderColor: 'blue',
-                fill: false
-            },
-            {
-                label: 'Línea 3',
-                data: Linea3,
-                borderColor: 'green',
-                fill: false
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                tooltips: {
+                    intersect: true,
+                    mode: 'index',
+                    callbacks: {
+                        label: function(tooltipItem, data) {
+                            var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += tooltipItem.yLabel;
+                            return label;
+                        }
+                    }
+                }
             }
-        ]
-    },
-    options: {}
-});
+        });
+        
 
 }
