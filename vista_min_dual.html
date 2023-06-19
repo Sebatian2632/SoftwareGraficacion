@@ -24,7 +24,6 @@
   <!-- Daterange picker -->
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -123,7 +122,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1 class="m-0 text-lg-center text-bold text-blue">MAXIMIZACIÓN</h1>
+            <h1 class="m-0 text-lg-center text-bold text-blue">MINIMIZACIÓN DUAL SIMPLEX</h1>
           </div><!-- /.col -->
           <!-- /.col -->
         </div><!-- /.row -->
@@ -134,13 +133,10 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        
-        <!-- /.row -->
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <section class="col-lg-6">
+          <section class="col-lg-6 ">
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card card-fuchsia">
               <div class="card-header">
@@ -148,8 +144,8 @@
               </div>
               <div class="card-body">
                 <div class="row">
-                  <div class="input-group mb-3 col-5">
-                    <input type="text" class="form-control" type="number" id="x1_eo">
+                  <div class="input-group mb-3 col-3">
+                    <input class="form-control" type="number" id="v1">
                     <div class="input-group-append">
                       <span class="input-group-text">x1</span>
                     </div>
@@ -157,10 +153,19 @@
                   <div class="col-1 text-center">
                     <h4>+</h4>
                   </div>
-                  <div class="input-group mb-3 col-5">
-                    <input type="text" class="form-control" type="number" id="x2_eo">
+                  <div class="input-group mb-3 col-3">
+                    <input class="form-control" type="number" id="v2">
                     <div class="input-group-append">
                       <span class="input-group-text">x2</span>
+                    </div>
+                  </div>
+                  <div class="col-1 text-center">
+                    <h4>+</h4>
+                  </div>
+                  <div class="input-group mb-3 col-3">
+                    <input class="form-control" type="number" id="v3">
+                    <div class="input-group-append">
+                      <span class="input-group-text">x3</span>
                     </div>
                   </div>
                 </div>
@@ -170,11 +175,11 @@
 
             <div class="card card-blue">
               <div class="card-header">
-                <h3 class="card-title">Restricciones</h3>
+                <h3 class="card-title col-lg-7">Restricciones</h3>
               </div>
               <div class="card-body">
                 <div class="row">
-                  <div class="input-group mb-3 col-3">
+                  <div class="input-group mb-3 col-2">
                     <input class="form-control" type="number" id="x1_r1">
                     <div class="input-group-append">
                       <span class="input-group-text">x1</span>
@@ -183,25 +188,34 @@
                   <div class="col-1 text-center">
                     <h4>+</h4>
                   </div>
-                  <div class="input-group mb-3 col-3">
-                    <input class="form-control" type="number" id="x2_r1">
+                  <div class="input-group mb-3 col-2">
+                    <input class="form-control" type="number" id="x1_r2">
                     <div class="input-group-append">
                       <span class="input-group-text">x2</span>
                     </div>
                   </div>
                   <div class="col-1 text-center">
+                    <h4>+</h4>
+                  </div>
+                  <div class="input-group mb-3 col-2">
+                    <input class="form-control" type="number" id="x1_r3">
+                    <div class="input-group-append">
+                      <span class="input-group-text">x3</span>
+                    </div>
+                  </div>
+                  <div class="col-1 text-center">
                     <h4>≤</h4>
                   </div>
-                  <div class="input-group mb-3 col-3">
-                    <input class="form-control" type="number" id="v1">
+                  <div class="input-group mb-3 col-2">
+                    <input class="form-control" type="number" id="x1_eo">
                     <div class="input-group-append">
                       <span class="input-group-text"></span>
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="input-group mb-3 col-3">
-                    <input class="form-control" type="number" id="x1_r2">
+                  <div class="input-group mb-3 col-2">
+                    <input class="form-control" type="number" id="x2_r1">
                     <div class="input-group-append">
                       <span class="input-group-text">x1</span>
                     </div>
@@ -209,63 +223,39 @@
                   <div class="col-1 text-center">
                     <h4>+</h4>
                   </div>
-                  <div class="input-group mb-3 col-3">
+                  <div class="input-group mb-3 col-2">
                     <input class="form-control" type="number" id="x2_r2">
                     <div class="input-group-append">
                       <span class="input-group-text">x2</span>
                     </div>
                   </div>
                   <div class="col-1 text-center">
-                    <h4>≤</h4>
-                  </div>
-                  <div class="input-group mb-3 col-3">
-                    <input class="form-control" type="number" id="v2">
-                    <div class="input-group-append">
-                      <span class="input-group-text"></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-group mb-3 col-3">
-                    <input class="form-control" type="number" id="x1_r3">
-                    <div class="input-group-append">
-                      <span class="input-group-text">x1</span>
-                    </div>
-                  </div>
-                  <div class="col-1 text-center">
                     <h4>+</h4>
                   </div>
-                  <div class="input-group mb-3 col-3">
+                  <div class="input-group mb-3 col-2">
                     <input class="form-control" type="number" id="x2_r3">
                     <div class="input-group-append">
-                      <span class="input-group-text">x2</span>
+                      <span class="input-group-text">x3</span>
                     </div>
                   </div>
                   <div class="col-1 text-center">
                     <h4>≤</h4>
                   </div>
-                  <div class="input-group mb-3 col-3">
-                    <input class="form-control" type="number" id="v3">
+                  <div class="input-group mb-3 col-2">
+                    <input class="form-control" type="number" id="x2_eo">
                     <div class="input-group-append">
                       <span class="input-group-text"></span>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <button type="button" class="btn btn-block btn-primary btn-lg col-lg-3 float-right" id="graficar_max" onclick="grafica_max();" value="grafica">Graficar</button>
+                  <button type="button" class="btn btn-block btn-primary btn-lg col-lg-3 float-right" id="graficar_min" onclick="grafica_max();" value="grafica">Graficar</button>
                   <button type="button" class="btn btn-block btn-danger btn-lg col-lg-3" id="reiniciar" onclick="reiniciar();" value="reinicio">Reset</button>
                 </div>
               </div>
               <!-- /.card-body -->
             </div>
-            <!-- /.card -->
-            
-            <!-- DIRECT CHAT -->
-            
-            <!--/.direct-chat -->
-
-            <!-- TO DO List -->
-            
+            <!-- /.card -->            
             <!-- /.card -->
           </section>
           <!-- /.Left col -->
@@ -299,33 +289,26 @@
                 </div>
               </div>
             </div>
-            
-            <!-- solid sales graph -->
-            <!-- /.card -->
-
-            <!-- Calendar -->
-            
-            <!-- /.card -->
-          </section><br>
-          <div class="col-12 col-sm-12">
-            <div class="card card-primary card-outline card-tabs">
-              <div class="card-header p-0 pt-1 border-bottom-0">
-                <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" id="custom-tabs-three-home-tab" data-toggle="pill" href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true">Interpretación</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <div class="tab-content" id="custom-tabs-three-tabContent">
-                  <div class="tab-pane fade show active" id="mensaje" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
-                    Aquí la interpretación de la gráfica.<br>
-                 </div>
+          </section><BR>
+            <div class="col-12 col-sm-12">
+              <div class="card card-primary card-outline card-tabs">
+                <div class="card-header p-0 pt-1 border-bottom-0">
+                  <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="custom-tabs-three-home-tab" data-toggle="pill" href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true">Interpretación</a>
+                    </li>
+                  </ul>
                 </div>
+                <div class="card-body">
+                  <div class="tab-content" id="custom-tabs-three-tabContent">
+                    <div class="tab-pane fade show active" id="mensaje" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
+                       Aquí la interpretación de la gráfica.<br>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card -->
               </div>
-              <!-- /.card -->
             </div>
-          </div>
           <!-- right col -->
         </div>
         <!-- /.row (main row) -->
@@ -337,15 +320,10 @@
   <footer class="main-footer">
     <strong>Software de Graficación</strong>
     <div class="float-right d-none d-sm-inline-block">
-      <b>NPVA_EDTA_BSVR</b>
+      <b>NPVA_EDTA_BSVR</b> 
     </div>
   </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 <!-- jQuery -->
@@ -381,6 +359,6 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- Link para las ecuaciones-->
-<script src="ecuaciones.js"></script>
+<script src="ecuaciones2.js"></script>
 </body>
 </html>
